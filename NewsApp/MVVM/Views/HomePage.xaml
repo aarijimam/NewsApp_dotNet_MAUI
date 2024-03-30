@@ -15,6 +15,7 @@
                    BackgroundColor="White"
                    Placeholder="Search News"
                    SearchButtonPressed="SearchBar_SearchButtonPressed"
+                   TextChanged="SearchBar_TextChanged"
                    ></SearchBar>
         <CollectionView SelectionMode = "Single"
                         SelectionChanged="CategorySelectionView_SelectionChanged"

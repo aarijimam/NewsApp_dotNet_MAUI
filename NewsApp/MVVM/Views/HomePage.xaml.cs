@@ -70,4 +70,14 @@ public partial class HomePage : ContentPage
         searchQuery = ((Microsoft.Maui.Controls.SearchBar)sender).Text;
         CallAPI(selectedCategory, searchQuery);
     }
+
+    void SearchBar_TextChanged(System.Object sender, Microsoft.Maui.Controls.TextChangedEventArgs e)
+    {
+        if(((Microsoft.Maui.Controls.SearchBar)sender).Text == "")
+        {
+            searchQuery = "";
+            CallAPI(selectedCategory, searchQuery);
+        }
+
+    }
 }
