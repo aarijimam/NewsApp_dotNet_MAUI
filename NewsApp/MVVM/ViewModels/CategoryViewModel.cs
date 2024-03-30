@@ -6,7 +6,7 @@ namespace NewsApp.MVVM.ViewModels
 {
 	public class CategoryViewModel
 	{
-		public ObservableCollection<Category> list_of_categories { get; set; }
+		public ObservableCollection<Category> ListofCategories { get; set; }
 		public CategoryViewModel()
 		{
 			LoadCategory();
@@ -14,7 +14,7 @@ namespace NewsApp.MVVM.ViewModels
 
         private void LoadCategory()
         {
-            list_of_categories = new ObservableCollection<Category>()
+            ListofCategories = new ObservableCollection<Category>()
             {
                 new Category{id = 1,name = "Breaking News",key = "breaking-news"},
                 new Category{id = 2,name = "World",key = "world"},

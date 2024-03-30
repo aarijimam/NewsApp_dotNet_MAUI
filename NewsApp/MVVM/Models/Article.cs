@@ -1,6 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using static Android.Graphics.ImageDecoder;
 
 namespace NewsApp.MVVM.Models
 {

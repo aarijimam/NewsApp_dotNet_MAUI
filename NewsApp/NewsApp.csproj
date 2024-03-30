@@ -61,11 +61,13 @@
 	  <None Remove="MVVM\Models\" />
 	  <None Remove="MVVM\ViewModels\" />
 	  <None Remove="MVVM\Views\" />
+	  <None Remove="Services\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="MVVM\" />
 	  <Folder Include="MVVM\Models\" />
 	  <Folder Include="MVVM\ViewModels\" />
 	  <Folder Include="MVVM\Views\" />
+	  <Folder Include="Services\" />
 	</ItemGroup>
 </Project>
