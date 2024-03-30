@@ -1,5 +1,6 @@
 ﻿using NewsApp.MVVM.ViewModels;
 using NewsApp.MVVM.Models;
+using NewsApp.Services;
 
 using Microsoft.Maui.Controls.PlatformConfiguration;
 using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
@@ -50,7 +51,8 @@ public partial class HomePage : ContentPage
         var article = item.BindingContext as Article;
         if (article is null) return;
 
-        Favourites.addFavourite(article);
+        //Favourites.addFavourite(article);
+        await LocalDbService.createFavourite(article);
         await DisplayAlert("Favourite Added", "Article added to Favourites", "OK");
     }
 
