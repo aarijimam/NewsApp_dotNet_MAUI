@@ -1,6 +1,11 @@
 ﻿using NewsApp.MVVM.ViewModels;
 using NewsApp.MVVM.Models;
 
+using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;
+
+
+
 namespace NewsApp.MVVM.Views;
 
 
@@ -9,6 +14,7 @@ public partial class HomePage : ContentPage
 	public HomePage()
 	{
 		InitializeComponent();
+        On<iOS>().SetUseSafeArea(true);
         CategorySelectionView.BindingContext = new CategoryViewModel();
 	}
 
@@ -28,5 +34,11 @@ public partial class HomePage : ContentPage
     {
 		var selectedItem = (e.CurrentSelection.FirstOrDefault()) as Category;
 		CallAPI(selectedItem.key);
+    }
+
+    void ArticleList1_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
+    {
+        var selectedItem = (e.CurrentSelection.FirstOrDefault()) as Article;
+        Navigation.PushAsync(new DetailsPage(selectedItem));
     }
 }

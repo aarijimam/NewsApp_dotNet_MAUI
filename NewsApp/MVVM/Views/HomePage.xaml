@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsApp.MVVM.Views.HomePage"
-             Title="HomePage">
-    <Grid RowDefinitions="100,50,*">
+             Title="HomePage"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <Grid RowDefinitions="100,60,*">
         <Label Text="NUST News"
                HorizontalOptions="Center"
                VerticalOptions="Center"
@@ -17,28 +19,35 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding name}"
-                           VerticalTextAlignment="Center"
-                           FontSize="20"/>
+                    <Frame CornerRadius="30">
+                        <Label Text="{Binding name}"
+                               VerticalTextAlignment="Center"
+                               FontSize="18"/>
+                    </Frame>
                 </DataTemplate>
 
             </CollectionView.ItemTemplate>
 
         </CollectionView>
-       <CollectionView Margin = "0,20,0,0" x:Name="ArticleList1" Grid.Row="2">
+       <CollectionView SelectionMode="Single" SelectionChanged="ArticleList1_SelectionChanged" Margin = "0,20,0,0" x:Name="ArticleList1" Grid.Row="2">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
-                                   ItemSpacing="2"></LinearItemsLayout>
+                                   ItemSpacing="20"></LinearItemsLayout>
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-
-                    <StackLayout>
-                        <Image Source="{Binding Image}" HeightRequest="200"/>
-                        <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
-                        <Label Text="{Binding Description}" Padding="5"/>
-                    </StackLayout>
-                    
+                    <Frame Margin="20"
+                           Padding="5"
+                           HasShadow="True"
+                           CornerRadius="20"
+                           IsClippedToBounds="True"
+                           HorizontalOptions="Center">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                            <Image Aspect="AspectFit" Source="{Binding Image}" HeightRequest="200"/>
+                            <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
+                            <Label Text="{Binding Description}" Padding="5"/>
+                        </StackLayout>
+                   </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
