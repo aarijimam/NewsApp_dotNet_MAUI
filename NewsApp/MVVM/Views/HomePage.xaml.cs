@@ -10,13 +10,23 @@ public partial class HomePage : ContentPage
 	{
 		InitializeComponent();
         CategorySelectionView.BindingContext = new CategoryViewModel();
-		ArticleList1.BindingContext = new CategoryViewModel();
 	}
 
-	//protected override async void OnAppearing()
-	//{
-	//	base.OnAppearing();
-	//	//List<Article> itemsource = 
-	//	ArticleList1.ItemsSource = await new NewsViewModel().LoadNews();
-	//}
+	protected override async void OnAppearing()
+	{
+		base.OnAppearing();
+		CallAPI("general");
+		
+	}
+
+    private async void CallAPI(string v)
+    {
+        ArticleList1.ItemsSource = await new NewsViewModel().LoadNews(v);
+    }
+
+    void CategorySelectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
+    {
+		var selectedItem = (e.CurrentSelection.FirstOrDefault()) as Category;
+		CallAPI(selectedItem.key);
+    }
 }
