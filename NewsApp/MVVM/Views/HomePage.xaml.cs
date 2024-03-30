@@ -13,8 +13,8 @@ public partial class HomePage : ContentPage
 {
 	public HomePage()
 	{
-		InitializeComponent();
         On<iOS>().SetUseSafeArea(true);
+        InitializeComponent();
         CategorySelectionView.BindingContext = new CategoryViewModel();
 	}
 

@@ -19,7 +19,8 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame CornerRadius="30">
+                    <Frame x:Name="SelectedFrame" CornerRadius="30"
+                           BackgroundColor="AliceBlue">
                         <Label Text="{Binding name}"
                                VerticalTextAlignment="Center"
                                FontSize="18"/>
@@ -37,13 +38,45 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame Margin="20"
+                           BorderColor="Gray"
                            Padding="5"
-                           HasShadow="True"
-                           CornerRadius="20"
-                           IsClippedToBounds="True"
-                           HorizontalOptions="Center">
+                           HasShadow="False"
+                           CornerRadius="0"
+                           
+                           
+                           IsClippedToBounds="False"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center">
+                       
+
                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
-                            <Image Aspect="AspectFit" Source="{Binding Image}" HeightRequest="200"/>
+                         <Border HeightRequest="200"
+                                 WidthRequest="400"
+                            
+                            StrokeShape="RoundRectangle 50,50,50,50"
+                            HorizontalOptions="Center"
+                    
+                            StrokeThickness="0"
+                            Margin="0,0,0,0">
+                            <Border.Shadow>
+                                    <Shadow Brush="Black"
+                                            Offset="20,20"
+                                            Radius="30"
+                                            Opacity="0.4"/>
+
+                                </Border.Shadow>
+                            <Image Aspect="Fill"
+                                   Source="{Binding Image}"
+                                   HeightRequest="200">
+                                   <Image.Shadow>
+                                    <Shadow Brush="Black"
+                                            Offset="20,20"
+                                            Radius="20"
+                                            Opacity="0.8"/>
+
+                                </Image.Shadow>
+                            </Image>
+                            </Border>
                             <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
                             <Label Text="{Binding Description}" Padding="5"/>
                         </StackLayout>
