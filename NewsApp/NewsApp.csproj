@@ -62,6 +62,7 @@
 	  <None Remove="MVVM\ViewModels\" />
 	  <None Remove="MVVM\Views\" />
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\favourite_icon.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="MVVM\" />
@@ -69,5 +70,8 @@
 	  <Folder Include="MVVM\ViewModels\" />
 	  <Folder Include="MVVM\Views\" />
 	  <Folder Include="Services\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\favourite_icon.png" />
 	</ItemGroup>
 </Project>

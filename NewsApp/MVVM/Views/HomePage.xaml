@@ -19,11 +19,21 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame x:Name="SelectedFrame" CornerRadius="30"
-                           BackgroundColor="AliceBlue">
+                    <Frame x:Name="SelectedFrame" CornerRadius="30">
                         <Label Text="{Binding name}"
                                VerticalTextAlignment="Center"
                                FontSize="18"/>
+                         <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"></VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="AliceBlue"></Setter>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
                     </Frame>
                 </DataTemplate>
 
@@ -37,50 +47,62 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Margin="20"
-                           BorderColor="Gray"
-                           Padding="5"
-                           HasShadow="False"
-                           CornerRadius="0"
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="Pink"
+                                    Text = "Favourite"
+                                    Invoked="SwipeItem_Invoked"/>
+                                </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Frame Margin="20"
+                               BorderColor="Transparent"
+                               Padding="0"
+                               HasShadow="False"
+                               CornerRadius="20"
                            
                            
-                           IsClippedToBounds="False"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center">
+                               IsClippedToBounds="False"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
                        
 
-                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
-                         <Border HeightRequest="200"
-                                 WidthRequest="400"
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                             <Border HeightRequest="200"
+                                     WidthRequest="400"
                             
-                            StrokeShape="RoundRectangle 50,50,50,50"
-                            HorizontalOptions="Center"
+                                StrokeShape="RoundRectangle 50,50,50,50"
+                                HorizontalOptions="Center"
                     
-                            StrokeThickness="0"
-                            Margin="0,0,0,0">
-                            <Border.Shadow>
-                                    <Shadow Brush="Black"
-                                            Offset="20,20"
-                                            Radius="30"
-                                            Opacity="0.4"/>
+                                StrokeThickness="0"
+                                Margin="0,0,0,0">
+                                <Border.Shadow>
+                                        <Shadow Brush="Black"
+                                                Offset="20,20"
+                                                Radius="30"
+                                                Opacity="0.4"/>
 
-                                </Border.Shadow>
-                            <Image Aspect="Fill"
-                                   Source="{Binding Image}"
-                                   HeightRequest="200">
-                                   <Image.Shadow>
-                                    <Shadow Brush="Black"
-                                            Offset="20,20"
-                                            Radius="20"
-                                            Opacity="0.8"/>
+                                    </Border.Shadow>
+                                <Image Aspect="Fill"
+                                       Source="{Binding Image}"
+                                       HeightRequest="200">
+                                       <Image.Shadow>
+                                        <Shadow Brush="Black"
+                                                Offset="20,20"
+                                                Radius="20"
+                                                Opacity="0.8"/>
 
-                                </Image.Shadow>
-                            </Image>
-                            </Border>
-                            <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
-                            <Label Text="{Binding Description}" Padding="5"/>
-                        </StackLayout>
-                   </Frame>
+                                    </Image.Shadow>
+                                </Image>
+                                </Border>
+                                <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
+                                <Label Text="{Binding Description}" Padding="5"/>
+                            </StackLayout>
+
+                        </Frame>
+                        
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

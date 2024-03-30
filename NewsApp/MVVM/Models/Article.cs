@@ -28,6 +28,11 @@ namespace NewsApp.MVVM.Models
 
         [JsonProperty("content")]
         public string Content { get; set; }
+
+        public void Test()
+        {
+            Console.Write("Test");
+        }
     }
 }
 

@@ -41,4 +41,15 @@ public partial class HomePage : ContentPage
         var selectedItem = (e.CurrentSelection.FirstOrDefault()) as Article;
         Navigation.PushAsync(new DetailsPage(selectedItem));
     }
+
+    private async void SwipeItem_Invoked(System.Object sender, System.EventArgs e)
+    {
+        var item = sender as SwipeItem;
+        if (item is null) return;
+
+        var article = item.BindingContext as Article;
+        if (article is null) return;
+    }
+
+    
 }
