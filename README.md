@@ -105,12 +105,12 @@ By using these tricks, our app stays organized, works smoothly, and makes life e
 
 ## Screenshots
 
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/3dfeaa02-a87d-42c7-a34f-10a916e43068)
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/30ceae73-8625-43d9-800f-1df7b0954a33)
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/90320858-227b-4459-80b1-34cdc352d5c0)
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/b0b241f5-ef6a-4a18-8af6-e17f16562e91)
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/36cade9d-9acb-4b06-a2c3-7355d9ff2b3d)
-![image](https://github.com/aarijimam/NewsApp/assets/35100854/46f11c06-5012-416d-9bc4-0c694337606a)
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/3dfeaa02-a87d-42c7-a34f-10a916e43068">
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/30ceae73-8625-43d9-800f-1df7b0954a33">
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/90320858-227b-4459-80b1-34cdc352d5c0">
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/b0b241f5-ef6a-4a18-8af6-e17f16562e91">
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/36cade9d-9acb-4b06-a2c3-7355d9ff2b3d">
+<img width="471" alt="image" src="https://github.com/aarijimam/NewsApp/assets/35100854/46f11c06-5012-416d-9bc4-0c694337606a">
 
 ## Installation
 
