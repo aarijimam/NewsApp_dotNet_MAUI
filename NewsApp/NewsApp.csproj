@@ -53,6 +53,19 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="MVVM\" />
+	  <None Remove="MVVM\Models\" />
+	  <None Remove="MVVM\ViewModels\" />
+	  <None Remove="MVVM\Views\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="MVVM\" />
+	  <Folder Include="MVVM\Models\" />
+	  <Folder Include="MVVM\ViewModels\" />
+	  <Folder Include="MVVM\Views\" />
+	</ItemGroup>
 </Project>
