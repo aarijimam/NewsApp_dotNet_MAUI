@@ -6,13 +6,24 @@ namespace NewsApp.Services
 {
 	public static class APIData
 	{
-		public static async Task<Root> getNews(string newsTopic)
+		public static async Task<Root> getNews(string newsTopic, string searchQuery)
 		{
 			var httpClient = new HttpClient();
-			var jsonData = await httpClient.GetStringAsync("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f8e7406839542c58100a71392a34567&category="+newsTopic);
+			
 
-            var result = JsonConvert.DeserializeObject<Root>(jsonData);
-			return result;
+            if (newsTopic == "all")
+			{
+                var jsonData = await httpClient.GetStringAsync("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f8e7406839542c58100a71392a34567" + "&q=" + searchQuery);
+                var result = JsonConvert.DeserializeObject<Root>(jsonData);
+                return result;
+            }
+			else {
+				var jsonData = await httpClient.GetStringAsync("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f8e7406839542c58100a71392a34567&category=" + newsTopic + "&q=" + searchQuery);
+                var result = JsonConvert.DeserializeObject<Root>(jsonData);
+                return result;
+            }
+
+            
 		}
 	}
 }

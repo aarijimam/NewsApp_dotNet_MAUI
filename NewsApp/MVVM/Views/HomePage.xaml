@@ -5,13 +5,22 @@
              Title="Home"
              NavigationPage.HasNavigationBar="False"
              >
-    <Grid RowDefinitions="100,60,*">
+    <Grid Padding="5" RowDefinitions="50,80,60,*" RowSpacing="10">
         <Label Text="NUST News"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                FontSize="24"
                FontFamily="OpenSansSemibold"></Label>
-        <CollectionView SelectionMode = "Single" SelectionChanged="CategorySelectionView_SelectionChanged" Margin="20,0,20,0" x:Name="CategorySelectionView" Grid.Row="1"
+        <SearchBar Grid.Row="1"
+                   BackgroundColor="White"
+                   Placeholder="Search News"
+                   SearchButtonPressed="SearchBar_SearchButtonPressed"
+                   ></SearchBar>
+        <CollectionView SelectionMode = "Single"
+                        SelectionChanged="CategorySelectionView_SelectionChanged"
+                        
+                        x:Name="CategorySelectionView"
+                        Grid.Row="2"
                         ItemsSource="{Binding ListofCategories}">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal"
@@ -40,7 +49,10 @@
             </CollectionView.ItemTemplate>
 
         </CollectionView>
-       <CollectionView SelectionMode="Single" SelectionChanged="ArticleList1_SelectionChanged" Margin = "0,20,0,0" x:Name="ArticleList1" Grid.Row="2">
+       <CollectionView SelectionMode="Single"
+                       SelectionChanged="ArticleList1_SelectionChanged"
+                       x:Name="ArticleList1"
+                       Grid.Row="3">
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Vertical"
                                    ItemSpacing="20"></LinearItemsLayout>

@@ -12,6 +12,9 @@ namespace NewsApp.MVVM.Views;
 
 public partial class HomePage : ContentPage
 {
+    string selectedCategory { get; set; } = "general";
+    string searchQuery { get; set; } = "";
+
 	public HomePage()
 	{
         On<iOS>().SetUseSafeArea(true);
@@ -22,19 +25,20 @@ public partial class HomePage : ContentPage
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
-		CallAPI("general");
+		CallAPI("general","");
 		
 	}
 
-    private async void CallAPI(string v)
+    private async void CallAPI(string v, string search_query)
     {
-        ArticleList1.ItemsSource = await new NewsViewModel().LoadNews(v);
+        ArticleList1.ItemsSource = await new NewsViewModel().LoadNews(v,searchQuery);
     }
 
     void CategorySelectionView_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
 		var selectedItem = (e.CurrentSelection.FirstOrDefault()) as Category;
-		CallAPI(selectedItem.key);
+        selectedCategory = selectedItem.key;
+        CallAPI(selectedItem.key,searchQuery);
     }
 
     void ArticleList1_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
@@ -59,5 +63,11 @@ public partial class HomePage : ContentPage
     void ImageButton_Clicked(System.Object sender, System.EventArgs e)
     {
         Navigation.PushAsync(new FavouritesPage());
+    }
+
+    void SearchBar_SearchButtonPressed(System.Object sender, System.EventArgs e)
+    {
+        searchQuery = ((Microsoft.Maui.Controls.SearchBar)sender).Text;
+        CallAPI(selectedCategory, searchQuery);
     }
 }
