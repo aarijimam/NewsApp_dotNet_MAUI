@@ -105,18 +105,12 @@ By using these tricks, our app stays organized, works smoothly, and makes life e
 
 ## Screenshots
 
-<img width="471" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/61326cb5-2853-4c39-afc4-a182619695b1">
-<img width="459" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/88580ac5-6775-49fc-b252-6d9ff63a2007">
-<img width="454" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/ec01f977-13c6-49ff-83b6-834a864f6c61">
-<img width="461" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/984527db-fd4c-4759-a11d-57b53de6b8f7">
-<img width="469" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/140f9760-761c-4f16-a1f0-14d06f37d5b6">
-<img width="473" alt="image" src="https://github.com/CezarAmanedddine/6002CEM_CezarAmanedddine/assets/165499095/804bb7b4-37c3-42f0-9219-ceaadbde81f2">
-
-
-
-
-
-
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/3dfeaa02-a87d-42c7-a34f-10a916e43068)
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/30ceae73-8625-43d9-800f-1df7b0954a33)
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/90320858-227b-4459-80b1-34cdc352d5c0)
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/b0b241f5-ef6a-4a18-8af6-e17f16562e91)
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/36cade9d-9acb-4b06-a2c3-7355d9ff2b3d)
+![image](https://github.com/aarijimam/NewsApp/assets/35100854/46f11c06-5012-416d-9bc4-0c694337606a)
 
 ## Installation
 
