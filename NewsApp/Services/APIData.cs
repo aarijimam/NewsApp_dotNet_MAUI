@@ -1,15 +1,16 @@
-﻿using System;
-using NewsApp.MVVM.Models;
+﻿using NewsApp.MVVM.Models;
 using Newtonsoft.Json;
 
 namespace NewsApp.Services
 {
-	public static class APIData
+    public static class APIData
 	{
 		public static async Task<Root> getNews(string newsTopic, string searchQuery)
 		{
-			var httpClient = new HttpClient();
-			
+
+            var httpClient = new HttpClient();
+
+            if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet) return null;
 
             if (newsTopic == "all")
 			{
@@ -25,6 +26,6 @@ namespace NewsApp.Services
 
             
 		}
-	}
+    }
 }
 
