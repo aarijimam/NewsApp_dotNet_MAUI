@@ -63,6 +63,8 @@
 	  <None Remove="MVVM\Views\" />
 	  <None Remove="Services\" />
 	  <None Remove="Resources\Images\favourite_icon.png" />
+	  <None Remove="Resources\Images\favorite-svgrepo-com.svg" />
+	  <None Remove="Resources\Images\heart.png" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="MVVM\" />
@@ -73,5 +75,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\favourite_icon.png" />
+	  <BundleResource Include="Resources\Images\favourote_icon.svg" />
+	  <BundleResource Include="Resources\Images\heart.png" />
 	</ItemGroup>
 </Project>

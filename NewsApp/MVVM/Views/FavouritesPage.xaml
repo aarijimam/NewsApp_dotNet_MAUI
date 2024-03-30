@@ -2,11 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsApp.MVVM.Views.FavouritesPage"
-             Title="FavouritesPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Favourites">
+    <Grid RowDefinitions="*">       
+       <CollectionView SelectionMode="Single" SelectionChanged="ArticleList1_SelectionChanged" Margin = "0,20,0,0" x:Name="ArticleList1" Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"
+                                   ItemSpacing="20"></LinearItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                              <SwipeItem
+                                    BackgroundColor="Grey"
+                                    Text = "Remove"
+                                    Invoked="SwipeItem_Invoked"/>
+                        </SwipeView.RightItems>
+                        <Frame Margin="20"
+                               BorderColor="Transparent"
+                               Padding="0"
+                               HasShadow="False"
+                               CornerRadius="20"
+                           
+                           
+                               IsClippedToBounds="False"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                       
+
+                            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="5">
+                             <Border HeightRequest="200"
+                                     WidthRequest="400"
+                            
+                                StrokeShape="RoundRectangle 50,50,50,50"
+                                HorizontalOptions="Center"
+                    
+                                StrokeThickness="0"
+                                Margin="0,0,0,0">
+                                <Border.Shadow>
+                                        <Shadow Brush="Black"
+                                                Offset="20,20"
+                                                Radius="30"
+                                                Opacity="0.4"/>
+
+                                    </Border.Shadow>
+                                <Image Aspect="Fill"
+                                       Source="{Binding Image}"
+                                       HeightRequest="200">
+                                       <Image.Shadow>
+                                        <Shadow Brush="Black"
+                                                Offset="20,20"
+                                                Radius="20"
+                                                Opacity="0.8"/>
+
+                                    </Image.Shadow>
+                                </Image>
+                                </Border>
+                                <Label Text="{Binding Title}" FontSize= "16" Padding="10" FontFamily="OpenSansSemibold"/>
+                                <Label Text="{Binding Description}" Padding="5"/>
+                            </StackLayout>
+
+                        </Frame>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
+    </Grid>
 </ContentPage>

@@ -18,7 +18,7 @@ public partial class HomePage : ContentPage
         CategorySelectionView.BindingContext = new CategoryViewModel();
 	}
 
-	protected override async void OnAppearing()
+	protected override void OnAppearing()
 	{
 		base.OnAppearing();
 		CallAPI("general");
@@ -49,7 +49,13 @@ public partial class HomePage : ContentPage
 
         var article = item.BindingContext as Article;
         if (article is null) return;
+
+        Favourites.addFavourite(article);
+        await DisplayAlert("Favourite Added", "Article added to Favourites", "OK");
     }
 
-    
+    void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        Navigation.PushAsync(new FavouritesPage());
+    }
 }
