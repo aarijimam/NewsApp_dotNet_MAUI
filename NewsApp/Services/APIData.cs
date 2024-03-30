@@ -9,8 +9,9 @@ namespace NewsApp.Services
 		public static async Task<Root> getNews(string newsTopic)
 		{
 			var httpClient = new HttpClient();
-			var jsonData = await httpClient.GetStringAsync("https://gnews.io/api/v4/top-headlines?category="+newsTopic.ToLower()+"&apikey=899f86129dcfbc7cf0809566cf8d3378&lang=en");
-			var result = JsonConvert.DeserializeObject<Root>(jsonData);
+			var jsonData = await httpClient.GetStringAsync("https://newsapi.org/v2/top-headlines?country=us&apiKey=7f8e7406839542c58100a71392a34567&category="+newsTopic);
+
+            var result = JsonConvert.DeserializeObject<Root>(jsonData);
 			return result;
 		}
 	}

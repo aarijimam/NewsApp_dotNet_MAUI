@@ -16,9 +16,7 @@ namespace NewsApp.MVVM.ViewModels
         {
             ListofCategories = new ObservableCollection<Category>()
             {
-                new Category{id = 1,name = "Breaking News",key = "breaking-news"},
-                new Category{id = 2,name = "World",key = "world"},
-                new Category{id = 3,name = "Nation",key = "nation"},
+                new Category{id = 3,name = "General",key = "general"},
                 new Category{id = 4,name = "Business",key = "business"},
                 new Category{id = 5,name = "Tech",key = "technology"},
                 new Category{id = 6,name = "Entertainment",key = "entertainment"},
