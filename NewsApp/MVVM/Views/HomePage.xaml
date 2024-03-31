@@ -6,13 +6,13 @@
              NavigationPage.HasNavigationBar="False"
              >
     <Grid Padding="5" RowDefinitions="50,80,60,*" RowSpacing="10">
-        <Label Text="NUST News"
+        <Label Text="Coventry News"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                FontSize="24"
                FontFamily="OpenSansSemibold"></Label>
         <SearchBar Grid.Row="1"
-                   BackgroundColor="White"
+                   BackgroundColor="{AppThemeBinding Dark=Black, Light=White}"
                    Placeholder="Search News"
                    SearchButtonPressed="SearchBar_SearchButtonPressed"
                    TextChanged="SearchBar_TextChanged"
@@ -29,7 +29,7 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame x:Name="SelectedFrame" CornerRadius="30">
+                    <Frame x:Name="SelectedFrame" CornerRadius="30" BorderColor="{AppThemeBinding Dark=White, Light=Gray}">
                         <Label Text="{Binding name}"
                                VerticalTextAlignment="Center"
                                FontSize="18"/>
@@ -38,7 +38,7 @@
                                 <VisualState Name="Normal"></VisualState>
                                 <VisualState Name="Selected">
                                     <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="AliceBlue"></Setter>
+                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=AliceBlue, Dark=RoyalBlue}"></Setter>
                                     </VisualState.Setters>
                                 </VisualState>
                                 
@@ -89,7 +89,7 @@
                                 StrokeThickness="0"
                                 Margin="0,0,0,0">
                                 <Border.Shadow>
-                                        <Shadow Brush="Black"
+                                        <Shadow Brush="{AppThemeBinding Light=Black, Dark=Gray}"
                                                 Offset="20,20"
                                                 Radius="30"
                                                 Opacity="0.4"/>
@@ -99,7 +99,7 @@
                                        Source="{Binding Image}"
                                        HeightRequest="200">
                                        <Image.Shadow>
-                                        <Shadow Brush="Black"
+                                        <Shadow Brush="{AppThemeBinding Dark=White, Light=Black}"
                                                 Offset="20,20"
                                                 Radius="20"
                                                 Opacity="0.8"/>
