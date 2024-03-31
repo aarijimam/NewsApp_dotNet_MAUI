@@ -11,9 +11,9 @@ namespace NewsApp.MVVM.ViewModels
 		public List<Article> ArticleList { get; set; } = new List<Article>();
 
 
-        public async Task<List<Article>> LoadNews(string newsCategory)
+        public async Task<List<Article>> LoadNews(string newsCategory, string searchQuery)
         {
-			var RootNews = await APIData.getNews(newsCategory);
+			var RootNews = await APIData.getNews(newsCategory,searchQuery);
 			foreach(var item in RootNews.Articles)
 			{
 				ArticleList.Add(item);

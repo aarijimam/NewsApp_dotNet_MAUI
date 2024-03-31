@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using NewsApp.MVVM.Views;
+using NewsApp.Services;
+using Microsoft.Extensions.Logging;
 
 namespace NewsApp;
 
