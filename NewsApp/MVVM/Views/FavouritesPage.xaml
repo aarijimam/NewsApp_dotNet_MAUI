@@ -40,7 +40,7 @@
                                 StrokeThickness="0"
                                 Margin="0,0,0,0">
                                 <Border.Shadow>
-                                        <Shadow Brush="Black"
+                                        <Shadow Brush="{AppThemeBinding Light=Black, Dark=Gray}"
                                                 Offset="20,20"
                                                 Radius="30"
                                                 Opacity="0.4"/>
@@ -50,7 +50,7 @@
                                        Source="{Binding Image}"
                                        HeightRequest="200">
                                        <Image.Shadow>
-                                        <Shadow Brush="Black"
+                                        <Shadow Brush="{AppThemeBinding Light=Black, Dark=Gray}"
                                                 Offset="20,20"
                                                 Radius="20"
                                                 Opacity="0.8"/>

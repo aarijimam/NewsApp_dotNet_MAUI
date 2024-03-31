@@ -99,7 +99,7 @@
                                        Source="{Binding Image}"
                                        HeightRequest="200">
                                        <Image.Shadow>
-                                        <Shadow Brush="{AppThemeBinding Dark=White, Light=Black}"
+                                        <Shadow Brush="{AppThemeBinding Dark=Gray, Light=Black}"
                                                 Offset="20,20"
                                                 Radius="20"
                                                 Opacity="0.8"/>
