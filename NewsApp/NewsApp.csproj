@@ -40,7 +40,7 @@
 	  <AndroidLinkMode>Full</AndroidLinkMode>
 	</PropertyGroup>
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-	  <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
+	  <AndroidHttpClientHandlerType>System.Net.Http.HttpClientHandler</AndroidHttpClientHandlerType>
 	  <AndroidTlsProvider>btls</AndroidTlsProvider>
 	  <AndroidLinkMode>SdkOnly</AndroidLinkMode>
 	</PropertyGroup>
