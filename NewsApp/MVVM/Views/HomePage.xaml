@@ -5,7 +5,7 @@
              Title="Home"
              NavigationPage.HasNavigationBar="False"
              >
-    <Grid Padding="5" RowDefinitions="50,80,60,*" RowSpacing="10">
+    <Grid Padding="5" RowDefinitions="50,auto,auto,*" RowSpacing="10">
         <Label Text="Coventry News"
                HorizontalOptions="Center"
                VerticalOptions="Center"
@@ -29,22 +29,11 @@
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame x:Name="SelectedFrame" CornerRadius="30" BorderColor="{AppThemeBinding Dark=White, Light=Gray}">
+                    <Border x:Name="SelectedFrame" StrokeShape="RoundRectangle 50,50,50,50" BackgroundColor="{AppThemeBinding Dark=White, Light=Gray}">
                         <Label Text="{Binding name}"
                                VerticalTextAlignment="Center"
                                FontSize="18"/>
-                         <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup Name="CommonStates">
-                                <VisualState Name="Normal"></VisualState>
-                                <VisualState Name="Selected">
-                                    <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=AliceBlue, Dark=RoyalBlue}"></Setter>
-                                    </VisualState.Setters>
-                                </VisualState>
-                                
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Frame>
+                    </Border>
                 </DataTemplate>
 
             </CollectionView.ItemTemplate>
